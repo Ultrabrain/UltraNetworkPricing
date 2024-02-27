@@ -134,6 +134,14 @@ button { font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI"
 .about .logo { background-color: #1e1e1e; color: #888888; }
 .about a { color: #c6c6c6; }
 .about a:hover { color: #ffffff; }
+.toolbar-icon .border { stroke: #1d1d1d; }
+.toolbar-icon .stroke { stroke: #aaaaaa; }
+.toolbar-icon:hover .stroke { stroke: #dfdfdf; }
+.toolbar-path-back-button { background: #aaaaaa; border-color: #aaaaaa; color: #333333; }
+.toolbar-path-back-button:hover { background: #dfdfdf; border-color: #dfdfdf; }
+.toolbar-path-name-button { background: #aaaaaa ; border-color: #aaaaaa; color: #404040; }
+.toolbar-path-name-button:hover { background: #dfdfdf; border-color: #dfdfdf; }
+.titlebar { color: #949494; }
 .welcome body { background-color: #1e1e1e; }
 .default body { background-color: #404040; }
 .active .titlebar { color: #c4c4c4; }
@@ -289,7 +297,19 @@ button { font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI"
         </svg>
     </button>
     <button id="zoom-out-button" class="toolbar-button" title="Zoom Out">
-        
+        <svg class="toolbar-icon" viewbox="0 0 100 100">
+            <circle class="border" cx="50" cy="50" r="35" stroke-width="8" stroke="#fff"></circle>
+            <line class="border" x1="38" y1="50" x2="62" y2="50" stroke-width="8" stroke-linecap="round" stroke="#fff"></line>
+            <line class="border" x1="78" y1="78" x2="82" y2="82" stroke-width="12" stroke-linecap="square" stroke="#fff"></line>
+            <circle class="stroke" cx="50" cy="50" r="35" stroke-width="4"></circle>
+            <line class="stroke" x1="38" y1="50" x2="62" y2="50" stroke-width="4" stroke-linecap="round"></line>
+            <line class="stroke" x1="78" y1="78" x2="82" y2="82" stroke-width="8" stroke-linecap="square"></line>
+        </svg>
+    </button>
+    <div id="toolbar-path" class="toolbar-path">
+        <button id="toolbar-path-back-button" class="toolbar-path-back-button" title="Back">
+            &#x276E;
+        </button>
     </div>
 </div>
 <div id="logo" class="center logo">
@@ -300,10 +320,8 @@ button { font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI"
         
     </a>
 </div>
-
     </a>
 </div>
-
     </a>
     <div class="center logo-message">
         <div style="height: 30px; text-align: center;">Version <span id="version" class="select">{version}</span></div>
@@ -326,8 +344,21 @@ button { font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI"
     <span id="message-text" class="center message-text"></span>
     <button id="message-button" class="center logo-button message-button" tabindex="0">Accept</button>
 </div>
+<div id="titlebar" class="titlebar">
 
-           
+    <div id="titlebar-content" class="titlebar-content">
+        <span id="titlebar-content-text" class="titlebar-content-text"></span>
+    </div>
+    <div id="titlebar-control-box" class="titlebar-control-box">
+        <div id="titlebar-close" class="titlebar-button titlebar-button-close" title="Close">
+
+        </div>
+        <div id="titlebar-toggle" class="titlebar-button" title="Maximize">
+
+        </div>
+        <div id="titlebar-minimize" class="titlebar-button" title="Minimize">
+
+
         </div>
     </div>
 </div>
